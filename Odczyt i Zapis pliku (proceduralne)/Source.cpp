@@ -1,7 +1,7 @@
 /*Robert Wyszecki
 Program Odczytuj¹cy i zapisuj¹cy
 plik tekstowy
-ostatnia data aktualizacji 02.10 2016*/
+ostatnia data aktualizacji 05.10 2016*/
 
 #pragma once
 #include<iostream>
@@ -13,31 +13,12 @@ ostatnia data aktualizacji 02.10 2016*/
 using namespace std;
 
 
-
-/*void zapis(){
-	fstream plik;
-	plik.open("wizytowka.txt", ios::out);
-}*/
-
-/*void intreduce(string name, string surname, int *age, int *number){
-	cout << "Prosze podac swoje imie: ";
-	cin >> name;
-	cout << "Prosze podac swoje nazwisko: ";
-	cin >> surname;
-	cout << "Prosze podac swoj wiek: ";
-	cin >> *age;
-	cout << "Prosze podac swoj nr telefonu";
-	cin >> *number;
-}*/
-
-
-
-
 int main(){
 	bool done = 0;
 	int choice = 0;
 	string name;
 	string sname;
+	string output;
 	int age;
 	int number;
 
@@ -53,7 +34,7 @@ int main(){
 			intreduce(&name, &sname, &age, &number);
 			dodaj(&name, &sname, &age, &number);
 			break;
-		case 3: cout << "Opcja jeszcze niedostepna. Wkrotce nastapi aktualizacja oprogramowania.";
+		case 3:odczyt(&output);
 			break;
 		case 4: done = 1;
 			break;

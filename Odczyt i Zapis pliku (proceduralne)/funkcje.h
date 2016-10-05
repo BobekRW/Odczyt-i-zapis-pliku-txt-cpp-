@@ -6,6 +6,9 @@
 
 using namespace std;
 
+void check(){
+}
+
 void menu(int *choice){
 	cout << "Co chcesz zrobic ?:" << endl;
 	cout << "1. Nadpisz dane" << endl;
@@ -54,4 +57,24 @@ void intreduce(string *name, string *surname, int *age, int *number){
 	cin >> *age;
 	cout << "Prosze podac swoj nr telefonu: ";
 	cin >> *number;
+}
+
+void odczyt(string *out){
+	fstream plik;
+	plik.open("wizytowka.txt");
+	if (plik.good() == false){
+		cout << "Nie mozna otworzyc pliku." << endl;
+	}
+	else
+	{
+		while (!plik.eof()){
+			/*plik >> *out;
+			cout << *out << endl;*/
+			getline(plik, *out);
+			cout << *out << endl;
+		}
+	}
+	
+	plik.close();
+
 }
